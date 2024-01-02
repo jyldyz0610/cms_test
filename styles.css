@@ -1,0 +1,19 @@
+.container {
+    position: relative;
+  }
+  
+  .video-container {
+    position: relative;
+    width: 560px; /* Breite des Videos */
+    height: 315px; /* Höhe des Videos */
+    margin-bottom: 20px; /* Platz zwischen Video und Formular */
+  }
+  
+  .link-form {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f0f0f0; /* Hintergrundfarbe für das Formular */
+    padding: 20px; /* Innenabstand des Formulars */
+  }
+  

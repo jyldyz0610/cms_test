@@ -1,0 +1,7 @@
+USE CMS;
+
+CREATE TABLE IF NOT EXISTS links (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    description VARCHAR(255) NOT NULL,
+    status VARCHAR(255) DEFAULT 'open'
+);

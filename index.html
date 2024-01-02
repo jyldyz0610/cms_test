@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erste Seite</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>YouTube-Video</h1>
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Xrgk023l4lI" frameborder="0" allowfullscreen></iframe>
+      <p>DevOps ist ein Ansatz, der die Prozesse zwischen Softwareentwicklung und operationalen IT-Teams automatisiert und optimiert, damit Software schneller und zuverlässiger erstellt, getestet und freigegeben werden kann. Bei DevOps geht es darum, die Barrieren zwischen traditionell isolierten Entwicklungs- und operationellen IT-Teams zu beseitigen. Bei einem DevOps-Modell arbeiten Entwicklungs- und Betriebsteams über den gesamten Lebenszyklus von Softwareanwendungen – von der Entwicklung und dem Test über die Bereitstellung bis hin zum Betrieb – zusammen.</p>
+      <div id="linksContainer"></div>
+    </div>
+  
+    </div>
+    
+    <form id="linkForm" class="link-form">
+      <label for="linkUrl">Link einfügen:</label>
+      <input type="text" id="linkUrl" placeholder="https://www.example.com">
+      <label for="linkDescription">Link-Beschreibung:</label>
+      <input type="text" id="linkDescription" placeholder="Beschreibung des Links">
+      <button type="button" onclick="saveLink()">Link speichern</button>
+      <div class="links-section">
+        <h2>Gespeicherte Links</h2>
+        <div id="linksContainer">
+            <!-- Hier werden die gespeicherten Links angezeigt -->
+
+        <!-- Hier werden die gespeicherten Links angezeigt -->
+      </div>
+    </form>
+  
+   
+  <script>
+    function redirectToSecondPage() {
+      window.location.href = 'seite2.html';
+    }
+
+    function saveLink() {
+      const linkUrl = document.getElementById('linkUrl').value;
+      const linkDescription = document.getElementById('linkDescription').value;
+
+      // Beispiel: Mock-Daten, bitte durch entsprechende Speicherlogik ersetzen
+      const savedLinks = [
+        { linkUrl: "https://www.youtube.com/watch?v=Xrgk023l4lI", linkDescription: "Beschreibung des Links 1" },
+        // Weitere gespeicherte Links hier hinzufügen...
+      ];
+
+      // Füge den neuen Link zu den gespeicherten Links hinzu
+      savedLinks.push({ linkUrl, linkDescription });
+
+      // Aktualisiere die Anzeige der gespeicherten Links
+      displayLinks(savedLinks);
+    }
+
+    function displayLinks(links) {
+      const linksContainer = document.getElementById('linksContainer');
+      linksContainer.innerHTML = ''; // Leere den Container
+
+      // Erstelle für jeden gespeicherten Link ein <p>-Element und zeige es an
+      links.forEach(link => {
+        const linkElement = document.createElement('p');
+        linkElement.textContent = `URL: ${link.linkUrl}, Beschreibung: ${link.linkDescription}`;
+        linksContainer.appendChild(linkElement);
+      });
+    }
+
+    // Beispiel: Anzeige der gespeicherten Links beim Laden der Seite
+    window.onload = function() {
+      const savedLinks = [
+        { linkUrl: "https://www.youtube.com/watch?v=Xrgk023l4lI", linkDescription: "Beschreibung des Links 1" },
+        // Weitere gespeicherte Links hier hinzufügen...
+      ];
+
+      displayLinks(savedLinks);
+    };
+  </script>
+</body>
+</html>
